@@ -1,2 +1,43 @@
 model_weights/
-contour_integ_models/saved_model/
+
+# weights or compressed files
+*.pt
+*.pth
+*.pth.tar
+*.ptm
+*.pthm
+*.tar
+*.zip
+*.np
+*.npz
+
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+
+
+# C extensions
+*.so
+
+
+
+
+# PyBuilder
+.pybuilder/
+target/
+
+
+
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+
+
