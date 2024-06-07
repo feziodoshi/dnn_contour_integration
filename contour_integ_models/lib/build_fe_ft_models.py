@@ -86,28 +86,29 @@ def get_base_model(base_model_name):
         base_model = ViT('B_16_imagenet1k', pretrained=True)
         
     elif(base_model_name=='alexnet-bagnet33_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_bagnet33(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_bagnet33_137331_final_weights_pytorch2-3b5d8dae71.pth')
+        base_model=alexnet_bagnet.alexnet_bagnet33(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_bagnet33_137331_final_weights_pytorch2-3b5d8dae71.pth')))
+        
         
     elif(base_model_name=='alexnet-bagnet31_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_bagnet31(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_bagnet31_115333_final_weights_pytorch2-25355f56ff.pth')
+        base_model=alexnet_bagnet.alexnet_bagnet31(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_bagnet31_115333_final_weights_pytorch2-25355f56ff.pth')))
         
     elif(base_model_name=='alexnet-bagnet17_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_bagnet17(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_bagnet17_93311_final_weights_pytorch2-b051786873.pth')
+        base_model=alexnet_bagnet.alexnet_bagnet17(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_bagnet17_93311_final_weights_pytorch2-b051786873.pth')))
     
     elif(base_model_name=='alexnet-bagnet11_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_bagnet11(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_bagnet11_72211_final_weights_pytorch2-d37f3073cd.pth')
+        base_model=alexnet_bagnet.alexnet_bagnet11(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_bagnet11_72211_final_weights_pytorch2-d37f3073cd.pth')))
     
     elif(base_model_name=='alexnet-bagnet09_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_bagnet9(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_bagnet9_73111_final_weights_pytorch2-26c23b5440.pth')
+        base_model=alexnet_bagnet.alexnet_bagnet9(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_bagnet9_73111_final_weights_pytorch2-26c23b5440.pth')))
     
     elif(base_model_name=='alexnet-epoch50_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_epoch050_pytorch2weights-f8ee0e1895.pth')
+        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_epoch050_pytorch2weights-f8ee0e1895.pth')))
     
     elif(base_model_name=='alexnet-epoch60_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename='../../dev/base_model_weights/alexnet_epoch060_pytorch2weights-7322541ea3.pth')
+        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../dev/base_model_weights/alexnet_epoch060_pytorch2weights-7322541ea3.pth')))
         
     elif(base_model_name=='alexnet-epoch100_regim_categ'):
-        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename='../../model_weights/base_model_weights/alexnet_final_weights_pytorch2-92c51abe44.pth')
+        base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_final_weights_pytorch2-92c51abe44.pth')))
         
     return base_model
         

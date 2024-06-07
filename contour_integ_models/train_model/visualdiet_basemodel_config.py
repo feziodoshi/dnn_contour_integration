@@ -94,8 +94,8 @@ training_config={'fine_tune':False,'base_model_name':'alexnet-pytorch_regim_cate
 
 
 
-## Base Model: PinholeNet33 (fine-tune)
-## Layer: features.9
+# # Base Model: PinholeNet33 (fine-tune)
+# # Layer: features.9
 # training_config={'fine_tune':True,'base_model_name':'alexnet-bagnet33_regim_categ','layer_name':'features.9',
 #                  'batch_size':8,'num_workers':32, 'use_device':'2','total_num_epochs':100,
 #                  'optimizer_name':'sgd','optimizer_lr':0.0001,'optimizer_momentum':0.9,'optimizer_wd':0.0, 'is_scheduler':True}
