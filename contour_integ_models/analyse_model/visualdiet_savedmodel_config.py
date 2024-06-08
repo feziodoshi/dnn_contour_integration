@@ -11,6 +11,9 @@ visual_diet_config = {'root_directory':os.path.expanduser('/home/jovyan/work/Dat
 
 
 ## Checkpoin Diet 
+saved_model_config = {'saved_model_directory': os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../saved_model/'))}
 # saved_model_config = {'saved_model_directory': os.path.join(os.path.dirname(os.path.realpath(__file__)), '../saved_model/')}
-saved_model_config = {'saved_model_directory': '../saved_model/'}
+# saved_model_config = {'saved_model_directory': '../saved_model/'}
+
+
 
