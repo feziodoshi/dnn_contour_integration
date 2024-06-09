@@ -32,11 +32,34 @@ pip install -r requirements.txt
 # Install the additional GitHub dependency
 pip install git+https://github.com/wielandbrendel/bag-of-local-features-models.git
 
-# Download additional files and place them in the parent directory
-wget http://example.com/somefile
-mv somefile ../
-wget http://example.com/anotherfile
-mv anotherfile ../
+# Create the relevant_files directory and subdirectories
+mkdir -p relevant_files/contour_dataset
+mkdir -p relevant_files/model_weights
+mkdir -p relevant_files/psychophysics_experiment
+
+
+# Extracting the files
+
+# Contour Dataset - Training and Validation
+wget http://example.com/model_training.tar -P relevant_files/contour_dataset
+tar -xvf relevant_files/contour_dataset/model_training.tar -C relevant_files/contour_dataset
+mv relevant_files/contour_dataset/model_training ../../
+
+# Contour Dataset - Psychophysics
+wget http://example.com/model_psychophysics.tar -P relevant_files/contour_dataset
+tar -xvf relevant_files/contour_dataset/model_psychophysics.tar -C relevant_files/contour_dataset
+mv relevant_files/contour_dataset/model_psychophysics ../../
+
+# Model Weights
+wget http://example.com/model_weights.tar -P relevant_files/model_weights
+tar -xvf relevant_files/model_weights/model_weights.tar -C relevant_files/model_weights
+mv relevant_files/model_weights/model_weights ../../
+
+# Psychophysics Experiment
+wget http://example.com/contour_exp1.tar -P relevant_files/psychophysics_experiment
+tar -xvf relevant_files/psychophysics_experiment/contour_exp1.tar -C relevant_files/psychophysics_experiment
+mv relevant_files/psychophysics_experiment/contour_exp1 ../../
+
 
 
 
