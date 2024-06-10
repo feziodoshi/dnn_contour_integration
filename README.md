@@ -108,10 +108,10 @@ jupyter notebook generate_training_psychophysics.ipynb
 
 ### 2) Training Contour Readout Model
 ```bash
-cd contour_integ_models
+cd contour_integ_models/train_model
 ```
 
-All required python files are present in the lib folder. Here is a quick description:
+All required python files are present in the contour_integ_models/lib folder. Here is a quick description:
 * build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
 * cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
 * feature_extractor.py - Contains code to hook and read activations from intermediate layers of a dnn backbone
@@ -132,10 +132,10 @@ jupyter notebook train_contour_readout.ipynb
 
 ### 3) Analysing performance and contour sensitivity of trained readout model
 ```bash
-cd contour_integ_models
+cd contour_integ_models/analyse_model
 ```
 
-All required python files are present in the lib folder. Here is a quick description:
+All required python files are present in the contour_integ_models/lib folder. Here is a quick description:
 * build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
 * cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
 * feature_extractor.py - Contains code to hook and read activations from intermediate layers of a dnn backbone
@@ -181,6 +181,9 @@ jupyter notebook human-psychophysics_contour_readout.ipynb
 
 
 ### 6) Manuscript Figures
+```bash
+cd manuscript_figures
+```
 
 To generate all the figures from the mansucript, follow these steps:  
 **Step 1:** Complete all the steps listed in [Installation](#installation). These steps are useful to extract all the model weights and contour stimuli used in the experiements and  move the required files in the parent directory.  
@@ -189,6 +192,8 @@ To generate all the figures from the mansucript, follow these steps:
 ```bash
 jupyter notebook manuscript_specific_plots.ipynb
 ```
+
+Results for all the readout models is present in **results_contour_readout_models.csv**.
 
 
 
