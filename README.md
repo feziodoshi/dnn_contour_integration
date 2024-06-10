@@ -21,6 +21,7 @@ Deep neural network models provide a powerful experimental platform for explorin
 - [Usage](#usage)
 - [Contact](#contact)
 - [Contributors](#contributors)
+- [Citation](#citation)
 - [License](#license)
 
 
@@ -44,6 +45,10 @@ Follow these steps to set up the repository and install all necessary dependenci
 # Clone this repository
 git clone https://github.com/feziodoshi/dnn_contour_integration.git
 cd dnn_contour_integration
+
+# Create a virtual environment – https://realpython.com/python-virtual-environments-a-primer/ – for the project
+python3 -m venv env
+source env/bin/activate
 
 # Install the dependencies from requirements.txt
 pip install -r requirements.txt
@@ -200,4 +205,10 @@ If you have any questions or issues accessing the files, please contact [fenil_d
 
 
 
+## Citation
+In prep
+
+
+
 ## License
+In prep
