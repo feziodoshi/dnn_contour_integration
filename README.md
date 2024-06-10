@@ -75,28 +75,52 @@ tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files
 
 ## Usage
 
-### Generating new contour stimuli
+### 1) Generating new contour stimuli
 ```bash
 cd contour_integ_stimuli
 ```
 
-All required functions are present in field_stim_function.py file. To generate a sample set of contour stimuli, run generate_sample.ipynb. This notebook provides a quick way to generate a sample set of contour stimuli using the default parameters.
+All required functions are present in field_stim_function.py file. To generate and render a sample set of contour stimuli, run generate_sample.ipynb. This notebook provides a quick way to generate a sample set of contour stimuli using the default parameters.
 ```bash
 jupyter notebook generate_sample.ipynb
 ```
 
 To generate new training and psychophysics stimuli, follow these steps:
-Step1: Open the training_psychophysics_config.py file and Update the parameters and folder locations for the training and psychophysics datasets as needed.
+Step1: Open the training_psychophysics_config.py file and update the parameters and folder locations for the training and psychophysics datasets as needed.
 Step2: Run the generate_training_psychophysics.ipynb notebook. This notebook uses the updated parameters from training_psychophysics_config.py to generate new training and psychophysics stimuli.
 ```bash
 jupyter notebook generate_training_psychophysics.ipynb
 ```
 
 
+### 2) Training Contour Readout Model
+```bash
+cd contour_integ_models
+```
+All required python files are present in the lib folder. Here is a quick description:
+* build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
+* cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
+* feature_extractor.py - Contains code to hook and read activations from intermediate layers of a dnn backbone
+* field_stim_function.py - Contains code to generate and render contour stimuli
+* guided_backprop.py - Contains code to run guided backprop on readout (spliced) models
+* misc_functions.py - Additional functions
+* utility_functions.py - Additional utility functions
+* receptive_fields.py - Comtains code to measure analytical receptive field size of units in intermediate layers of a dnn backbone
 
-### Training Contour Readout Model
 
+To train a contour readout model, follow these steps:
+Step1: Open the visualdiet_basemodel_config.py file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and training_config (training hyperaparameters including the dnn backbone, layer readout and finetuning mode) dictionaries.
+Step2: Run the train_contour_readout.ipynb notebook. This notebook uses the updated parameters from visualdiet_basemodel_config.py to train models and save it in the 'contour_integ_models/saved_model' directory.
+```bash
+jupyter notebook train_contour_readout.ipynb
+```
 
+To analyse a saved model, follow these steps:
+Step1: Open the visualdiet_savedmodel_config.py file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and saved_model_config (location of the saved model directory) dictionaries.
+Step2: Run the analyse_contour_readout.ipynb notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to analyse saved models (including the training, validation accuracies and losses, location sensitivity, and alignment sensitivity to contours using saliency maps and guided backprop).
+```bash
+jupyter notebook analyse_contour_readout.ipynb
+```
 
 ### Analysing performance and contour sensitivity of trained readout model
 
