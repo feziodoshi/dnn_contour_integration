@@ -1,6 +1,14 @@
-# dnn_contour_integration
+# A feedforward mechanism for human-like contour integration
+***Fenil R. Doshi, Talia Konkle, and George A. Alvarez***  
+*Harvard University, Dept. of Psychology*
 
-This repository contains all the code and necessary files (datasets, model weights and psychophysics experiemnt) for the paper 'A feedforward mechanism for human-like contour integration'.
+This repository contains all the code and necessary files (datasets, model weights and psychophysics experiemnt) for the paper 'A feedforward mechanism for human-like contour integration':
+
+# Abstract
+Deep neural network models provide a powerful experimental platform for exploring core mechanisms underlying human visual perception, such as perceptual grouping and contour integration — the process of linking local edge elements to arrive at a unified perceptual representation of a complete contour. Here, we demonstrate that feedforward, nonlinear convolutional neural networks (CNNs), such as Alexnet, can emulate this aspect of human vision without relying on mechanisms proposed in prior work, such as lateral connections, recurrence, or top-down feedback. We identify two key inductive biases that give rise to human-like contour integration in purely feedforward CNNs: a gradual progression of receptive field sizes with increasing layer depth, and a bias towards relatively straight (gradually curved) contours. While lateral connections, recurrence, and feedback are ubiquitous and important visual processing mechanisms, these results provide a computational existence proof that a feedforward hierarchy is sufficient to implement gestalt "good continuation" mechanisms that detect extended contours in a manner that is consistent with human perception.
+
+![](manuscript_figures/f6.png)
+
 
 ## Table of Contents
 
@@ -10,13 +18,13 @@ This repository contains all the code and necessary files (datasets, model weigh
 - [License](#license)
 
 ## Description
-This repository contains all the code and necessary files (datasets, model weights and psychophysics experiemnt) for the paper 'A feedforward mechanism for human-like contour integration'. The repository contains the following folders:
+This repository contains all the code and necessary files (datasets, model weights, and psychophysics experiments) for the paper 'A feedforward mechanism for human-like contour integration'. The repository contains the following folders:
 
-* contour_integ_stimuli  - Use it to generate all contour stimuli
-* contour_integ_models   - Use it to train different kiuds of feedforward contour readout models and analyse the internal activations. Additional code is provided to compute saliency maps and sensitivity to contour alignment
-* contour_integ_behavior - Use it to view unprocessed humam behavioral data. Code is provided to perform psychophysics on any trained model and compare it with humans to measure human-model alignment
-* manuscript_figures     - Use it to generate all figures from the manuscript. To replicate the exact same figures, you will need access to all the model weights and the contour dataset (provided in the relevant files folder)
-* relevant_files         - Contains all the necessary files - contour dataset (training, validation, and psychopbhysics), model weights (pretrained dnn backbone weights and contour readout weights), and code for psychophysics experiemnet
+* contour_integ_stimuli  - Use it to generate all contour stimuli.
+* contour_integ_models   - Use it to train different kinds of feedforward contour readout models and analyze the internal activations. Additional code is provided to compute saliency maps and sensitivity to contour alignment.
+* contour_integ_behavior - Use it to view unprocessed human behavioral data. Code is provided to perform psychophysics on any trained model and compare it with humans to measure human-model alignment.
+* manuscript_figures     - Use it to generate all figures from the manuscript. To replicate the exact same figures, you will need access to all the model weights and the contour dataset (provided in the relevant files folder).
+* relevant_files         - Contains all the necessary files - contour dataset (training, validation, and psychophysics), model weights (pretrained DNN backbone weights and contour readout weights), and code for the psychophysics experiment.
 
 
 
@@ -65,8 +73,6 @@ tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files
 
 
 
-
-
 ## Usage
 The repository contains the following files:
 
@@ -79,6 +85,15 @@ The repository contains the following files:
 * field_stim_functions.py - python file containing config information for (a) training (b) validation and (c) psychophyics stimuli
 
 
+
+
+
+```markdown
 ## License
 
-Specify the license under which your project is distributed.
+```
+
+
+## Contact
+If you have any questions or issues accessing the files, please contact [fenil_doshi@fas.harvard.edu](mailto:fenil_doshi@fas.harvard.edu).
+
