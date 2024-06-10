@@ -1,6 +1,6 @@
 # A feedforward mechanism for human-like contour integration
 ***Fenil R. Doshi, Talia Konkle, and George A. Alvarez***  
-*Department of Psychology, Harvard University, Cambridge, Massachusetts*
+*Department of Psychology, Harvard University, Cambridge, Massachusetts*  
 *Kempner Institute for the Study of Natural and Artificial Intelligence, Harvard University, Cambridge, Massachusetts*
 
 
