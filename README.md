@@ -80,9 +80,17 @@ tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files
 cd contour_integ_stimuli
 ```
 
-All required functions are present in field_stim_function.py file. To generate a sample set of contour stimuli, run generate_sample.ipynb.
+All required functions are present in field_stim_function.py file. To generate a sample set of contour stimuli, run generate_sample.ipynb. This notebook provides a quick way to generate a sample set of contour stimuli using the default parameters.
+```bash
+jupyter notebook generate_sample.ipynb
+```
 
-To generate new training and psychophysics stimuli - Update the parameters and folder locations of the training and psychophysics dataset in training_psychophysics_config.py and run generate_training_psychophysics.ipynb. 
+To generate new training and psychophysics stimuli, follow these steps:
+Step1: Open the training_psychophysics_config.py file and Update the parameters and folder locations for the training and psychophysics datasets as needed.
+Step2: Run the generate_training_psychophysics.ipynb notebook. This notebook uses the updated parameters from training_psychophysics_config.py to generate new training and psychophysics stimuli.
+```bash
+jupyter notebook generate_training_psychophysics.ipynb
+```
 
 
 
