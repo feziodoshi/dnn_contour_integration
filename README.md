@@ -88,9 +88,9 @@ All required functions are present in field_stim_function.py file. To generate a
 jupyter notebook generate_sample.ipynb
 ```
 
-To generate new training and psychophysics stimuli, follow these steps:
-Step1: Open the **training_psychophysics_config.py file** and update the parameters and folder locations for the training and psychophysics datasets as needed.
-Step2: Run the **generate_training_psychophysics.ipynb notebook**. This notebook uses the updated parameters from training_psychophysics_config.py to generate new training and psychophysics stimuli.
+To generate new training and psychophysics stimuli, follow these steps:  
+Step1: Open the **training_psychophysics_config.py file** and update the parameters and folder locations for the training and psychophysics datasets as needed.  
+Step2: Run the **generate_training_psychophysics.ipynb notebook**. This notebook uses the updated parameters from training_psychophysics_config.py to generate new training and psychophysics stimuli.  
 ```bash
 jupyter notebook generate_training_psychophysics.ipynb
 ```
@@ -100,6 +100,7 @@ jupyter notebook generate_training_psychophysics.ipynb
 ```bash
 cd contour_integ_models
 ```
+
 All required python files are present in the lib folder. Here is a quick description:
 * build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
 * cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
@@ -111,9 +112,9 @@ All required python files are present in the lib folder. Here is a quick descrip
 * receptive_fields.py - Comtains code to measure analytical receptive field size of units in intermediate layers of a dnn backbone
 
 
-To train a contour readout model, follow these steps:
-Step1: Open the **visualdiet_basemodel_config.py** file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and training_config (training hyperaparameters including the dnn backbone, layer readout and finetuning mode) dictionaries.
-Step2: Run the **train_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_basemodel_config.py to train models and save it in the 'contour_integ_models/saved_model' directory.
+To train a contour readout model, follow these steps:  
+Step1: Open the **visualdiet_basemodel_config.py** file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and training_config (training hyperaparameters including the dnn backbone, layer readout and finetuning mode) dictionaries.  
+Step2: Run the **train_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_basemodel_config.py to train models and save it in the 'contour_integ_models/saved_model' directory.  
 ```bash
 jupyter notebook train_contour_readout.ipynb
 ```
@@ -123,6 +124,7 @@ jupyter notebook train_contour_readout.ipynb
 ```bash
 cd contour_integ_models
 ```
+
 All required python files are present in the lib folder. Here is a quick description:
 * build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
 * cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
@@ -134,9 +136,9 @@ All required python files are present in the lib folder. Here is a quick descrip
 * receptive_fields.py - Comtains code to measure analytical receptive field size of units in intermediate layers of a dnn backbone
 
 
-To analyse a saved model, follow these steps:
-Step1: Open the **visualdiet_savedmodel_config.py** file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and saved_model_config (location of the saved model directory) dictionaries.
-Step2: Run the **analyse_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to analyse saved models (including the training, validation accuracies and losses, location sensitivity, and alignment sensitivity to contours using saliency maps and guided backprop).
+To analyse a saved model, follow these steps:  
+Step1: Open the **visualdiet_savedmodel_config.py** file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and saved_model_config (location of the saved model directory) dictionaries.  
+Step2: Run the **analyse_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to analyse saved models (including the training, validation accuracies and losses, location sensitivity, and alignment sensitivity to contours using saliency maps and guided backprop).  
 ```bash
 jupyter notebook analyse_contour_readout.ipynb
 ```
@@ -147,7 +149,7 @@ jupyter notebook analyse_contour_readout.ipynb
 cd contour_integ_behavior
 ```
 
-All human results from the psychophysics experiments is present in the contour_integ_behavior/contour_exp1 folder. The raw data is present in the contour_exp1/data folder. To analyse this data, run **human-psychophysics_exp1.ipynb**. This notebook loads the preprocessed data, visualizes it, removes outliers and shows the final processed human data (with the split half reliability estimates).
+All human results from the psychophysics experiments is present in the contour_integ_behavior/contour_exp1 folder. The raw data is present in the contour_exp1/data folder. To analyse this data, run **human-psychophysics_exp1.ipynb**. This notebook loads the preprocessed data, visualizes it, removes outliers and shows the final processed human data (with the split half reliability estimates).  
 ```bash
 jupyter notebook human-psychophysics_exp1.ipynb
 ```
@@ -156,11 +158,12 @@ jupyter notebook human-psychophysics_exp1.ipynb
 ```bash
 cd contour_integ_behavior
 ```
+
 All processed human behavioral data is located in contour_integ_behavior/contour_exp1/analysis_data folder (with filename analysis.pkl).
 
-To perform model psychophysics and compare it with humans, follow these steps:
-Step1: Open the **visualdiet_savedmodel_config.py** file and update psychophysics_visual_diet_config (absolute locations and configuration of contour psychophysics stimuli) and saved_model_config (location of the saved model directory) dictionaries.
-Step2: Run the **psychophysics_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to measurer contour signal strength in a saved model and compare models and humans at the level of individual trials and visualize the model and human performance as a function of global curvature.
+To perform model psychophysics and compare it with humans, follow these steps:  
+Step1: Open the **visualdiet_savedmodel_config.py** file and update psychophysics_visual_diet_config (absolute locations and configuration of contour psychophysics stimuli) and saved_model_config (location of the saved model directory) dictionaries.  
+Step2: Run the **psychophysics_contour_readout.ipynb** notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to measurer contour signal strength in a saved model and compare models and humans at the level of individual trials and visualize the model and human performance as a function of global curvature.  
 ```bash
 jupyter notebook human-psychophysics_contour_readout.ipynb
 ```
@@ -168,10 +171,10 @@ jupyter notebook human-psychophysics_contour_readout.ipynb
 
 ### 6) Manuscript Figures
 
-To generate all the figures from the mansucript, follow these steps:
-Step1: Complete all the steps listed in [Installation](#installation). These steps are useful to extract all the model weights and contour stimuli used in the experiements and  move the required files in the parent directory.
-Step2: Open the **visualdiet_savedmodel_config.py** file and update visual_diet_config and psychophysics_visual_diet_config (absolute locations and configuration of contour psychophysics stimuli) dictionaries.
-Step3: Run the **manuscript_specific_plots.ipynb** notebook.
+To generate all the figures from the mansucript, follow these steps:  
+Step1: Complete all the steps listed in [Installation](#installation). These steps are useful to extract all the model weights and contour stimuli used in the experiements and  move the required files in the parent directory.  
+Step2: Open the **visualdiet_savedmodel_config.py** file and update visual_diet_config and psychophysics_visual_diet_config (absolute locations and configuration of contour psychophysics stimuli) dictionaries.  
+Step3: Run the **manuscript_specific_plots.ipynb** notebook.  
 ```bash
 jupyter notebook manuscript_specific_plots.ipynb
 ```
