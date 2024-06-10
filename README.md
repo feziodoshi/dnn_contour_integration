@@ -115,14 +115,28 @@ Step2: Run the train_contour_readout.ipynb notebook. This notebook uses the upda
 jupyter notebook train_contour_readout.ipynb
 ```
 
+
+### Analysing performance and contour sensitivity of trained readout model
+```bash
+cd contour_integ_models
+```
+All required python files are present in the lib folder. Here is a quick description:
+* build_fe_ft_models.py - Contains code to build spliced models which are used to train readout models (fine-tuned or frozen) with different dnn backbones
+* cutom_dataset.py - Contains code to make pytorch datasets for the contour stimuli
+* feature_extractor.py - Contains code to hook and read activations from intermediate layers of a dnn backbone
+* field_stim_function.py - Contains code to generate and render contour stimuli
+* guided_backprop.py - Contains code to run guided backprop on readout (spliced) models
+* misc_functions.py - Additional functions
+* utility_functions.py - Additional utility functions
+* receptive_fields.py - Comtains code to measure analytical receptive field size of units in intermediate layers of a dnn backbone
+
+
 To analyse a saved model, follow these steps:
 Step1: Open the visualdiet_savedmodel_config.py file and update visual_diet_config (absolute locations and configuration of contour training stimuli) and saved_model_config (location of the saved model directory) dictionaries.
 Step2: Run the analyse_contour_readout.ipynb notebook. This notebook uses the updated parameters from visualdiet_savedmodel_config.py to analyse saved models (including the training, validation accuracies and losses, location sensitivity, and alignment sensitivity to contours using saliency maps and guided backprop).
 ```bash
 jupyter notebook analyse_contour_readout.ipynb
 ```
-
-### Analysing performance and contour sensitivity of trained readout model
 
 
 
