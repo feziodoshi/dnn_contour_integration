@@ -74,24 +74,36 @@ tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files
 
 
 ## Usage
-The repository contains the following files:
 
-* field_stim_functions.py - python file containing all the relevant functions to generate the stimuli similiar to Field et al., 1993
+### Generating new contour stimuli
+```bash
+cd contour_integ_stimuli
+```
 
-* generate_sample.ipnb - notebook containing interactive code to visualize sample stimuli - contour stimuli with maks and information about all elements in the display
+All required functions are present in field_stim_function.py file. To generate a sample set of contour stimuli, run generate_sample.ipynb.
 
-* generate_training_psychophyics.ipnb - notebook containing code to generate (a) training (b) validation and (c) psychophyics stimuli
-
-* field_stim_functions.py - python file containing config information for (a) training (b) validation and (c) psychophyics stimuli
-
-
+To generate new training and psychophysics stimuli - Update the parameters and folder locations of the training and psychophysics dataset in training_psychophysics_config.py and run generate_training_psychophysics.ipynb. 
 
 
 
-```markdown
+### Training Contour Readout Model
+
+
+
+### Analysing performance and contour sensitivity of trained readout model
+
+
+
+### Analysing human-model alignment of trained readout model
+
+
+
+
+
+
 ## License
 
-```
+
 
 
 ## Contact
