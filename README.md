@@ -12,9 +12,12 @@ This repository contains all the code and necessary files (datasets, model weigh
 ## Description
 This repository contains all the code and necessary files (datasets, model weights and psychophysics experiemnt) for the paper 'A feedforward mechanism for human-like contour integration'. The repository contains the following folders:
 
-* contour_integ_stimuli
-* contour_integ_models
-* contour_integ_behavior
+* contour_integ_stimuli  - Use it to generate all contour stimuli
+* contour_integ_models   - Use it to train different kiuds of feedforward contour readout models and analyse the internal activations. Additional code is provided to compute saliency maps and sensitivity to contour alignment
+* contour_integ_behavior - Use it to view unprocessed humam behavioral data. Code is provided to perform psychophysics on any trained model and compare it with humans to measure human-model alignment
+* manuscript_figures     - Use it to generate all figures from the manuscript. To replicate the exact same figures, you will need access to all the model weights and the contour dataset (provided in the relevant files folder)
+* relevant_files         - Contains all the necessary files - contour dataset (training, validation, and psychopbhysics), model weights (pretrained dnn backbone weights and contour readout weights), and code for psychophysics experiemnet
+
 
 
 ## Installation
