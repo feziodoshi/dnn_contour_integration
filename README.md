@@ -193,7 +193,8 @@ To generate all the figures from the mansucript, follow these steps:
 jupyter notebook manuscript_specific_plots.ipynb
 ```
 
-Results for all the readout models is present in **results_contour_readout_models.csv**.
+### 7) Results file
+Results for all the readout models is present in **manuscript_figures/results_contour_readout_models.csv**.
 
 
 
