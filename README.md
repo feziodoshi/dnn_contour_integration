@@ -1,6 +1,9 @@
 # A feedforward mechanism for human-like contour integration
 ***Fenil R. Doshi, Talia Konkle, and George A. Alvarez***  
-*Harvard University, Dept. of Psychology*
+*Department of Psychology, Harvard University, Cambridge, Massachusetts*
+*Kempner Institute for the Study of Natural and Artificial Intelligence, Harvard University, Cambridge, Massachusetts*
+
+
 
 This repository contains all the code and necessary files (datasets, model weights and psychophysics experiemnt) for the paper 'A feedforward mechanism for human-like contour integration':
 
