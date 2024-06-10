@@ -28,39 +28,37 @@ cd dnn_contour_integration
 
 # Install the dependencies from requirements.txt
 pip install -r requirements.txt
-
 # Install the additional GitHub dependency
 pip install git+https://github.com/wielandbrendel/bag-of-local-features-models.git
 
-# Create the relevant_files directory and subdirectories
-mkdir -p relevant_files/contour_dataset
-mkdir -p relevant_files/model_weights
-mkdir -p relevant_files/psychophysics_experiment
-
 
 # Extracting the files
+mkdir -p relevant_files
 
-# Contour Dataset - Training and Validation
-wget http://example.com/model_training.tar -P relevant_files/contour_dataset
-tar -xvf relevant_files/contour_dataset/model_training.tar -C relevant_files/contour_dataset
-mv relevant_files/contour_dataset/model_training ../../
+# 1. Contour Dataset - Training, Validation, and Psychophysics dataset
+wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fo/rxfzsqhkv6mw8gif7d15w/AIpDy7XSYfnlO1i8HTfBiiA?rlkey=21ifwapf46mflb25iaiy6ne2f&st=77k0pm0z&dl=1"
+mkdir -p relevant_files/contour_dataset
+unzip relevant_files/temp_download.zip -d relevant_files/contour_dataset/
 
-# Contour Dataset - Psychophysics
-wget http://example.com/model_psychophysics.tar -P relevant_files/contour_dataset
-tar -xvf relevant_files/contour_dataset/model_psychophysics.tar -C relevant_files/contour_dataset
-mv relevant_files/contour_dataset/model_psychophysics ../../
+# 2. Model Weights
+wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fo/ambt5caokz4gybg3n19yt/AAwxCcW4ic9dw8qPL6YKYsE?rlkey=expo3ewzxohhcpj6s3t13110q&st=cd2v5lzd&dl=1"
+mkdir -p relevant_files/contour_dataset
+unzip relevant_files/temp_download.zip -d relevant_files/contour_dataset/
 
-# Model Weights
-wget http://example.com/model_weights.tar -P relevant_files/model_weights
-tar -xvf relevant_files/model_weights/model_weights.tar -C relevant_files/model_weights
-mv relevant_files/model_weights/model_weights ../../
 
-# Psychophysics Experiment
-wget http://example.com/contour_exp1.tar -P relevant_files/psychophysics_experiment
-tar -xvf relevant_files/psychophysics_experiment/contour_exp1.tar -C relevant_files/psychophysics_experiment
-mv relevant_files/psychophysics_experiment/contour_exp1 ../../
+# 3. Psychophysics Experiment
+wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fo/6x6vovfkkbmjujock9px0/AJCvNGJje1RgPQUvCOoFPq0?rlkey=48lobiml61e2m1v87rr2kayh7&st=6nuet6r9&dl=1"
+mkdir -p relevant_files/psychophysics_experiment
+unzip relevant_files/temp_download.zip -d relevant_files/psychophysics_experiment/
+rm -rf relevant_files/temp_download.zip
+
+# If you plan on using the existing datasets and the model weights to reconstruct manuscript figures:
+# Step 1: Extract the file from the relevant files folder
+tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files/<weights or dataset folder>
+# Step 2: Navigate to the folder of interest and move it to the parent directory (using the mv command):
+# a) For model weights find the model weights folder and move it to the parent directory 
+# b) For datasets you can move the model-training or model-psychophysics dataset in the relevant location. However you will have to add the absolute paths in all config files provided in each subdirectory to run the notebooks
 ```
-
 
 
 
