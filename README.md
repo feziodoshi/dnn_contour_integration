@@ -193,17 +193,23 @@ To generate all the figures from the mansucript, follow these steps:
 jupyter notebook manuscript_specific_plots.ipynb
 ```
 
-### 7) Results file
-Results for all the readout models is present in **manuscript_figures/results_contour_readout_models.csv**.
 
 
-### 8) Behavioral code
+### 7) Behavioral code
 Behavioral experiments were implemented using javascript (using the jspsych library - Leeuw et al., 2015), html, and css, and can be run in the browser. To get access to the behavioral code, follow these steps:
 **Step 1:** Complete  the steps listed in [Installation](#installation) to extract the psychophysics experiment.
 **Step 2:** The behavioral code can be found in the relevant_files folder.
 ```bash
 cd relevant_files/psychophysics_experiment
 ```
+
+
+
+### 8) Results file
+Results for all the readout models is present in **manuscript_figures/results_contour_readout_models.csv**.
+
+
+
 
 ## Contact
 If you have any questions or issues accessing the files, please contact [fenil_doshi@fas.harvard.edu](mailto:fenil_doshi@fas.harvard.edu).
