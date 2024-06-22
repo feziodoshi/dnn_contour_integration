@@ -57,8 +57,7 @@ pip install git+https://github.com/wielandbrendel/bag-of-local-features-models.g
 ```
 
 
-If you plan on using the same datasets/pre-trained contour readout models, follow these steps to extract the relevant files:
-
+If you plan on using the same contour datasets or the pre-trained contour-readout models, follow these steps to extract the relevant files:
 
 ```bash
 # Extracting the files
