@@ -54,8 +54,13 @@ source env/bin/activate
 pip install -r requirements.txt
 # Install the additional GitHub dependency
 pip install git+https://github.com/wielandbrendel/bag-of-local-features-models.git
+```
 
 
+If you plan on using the same datasets/pre-trained contour readout models, follow these steps to extract the relevant files:
+
+
+```bash
 # Extracting the files
 mkdir -p relevant_files
 
