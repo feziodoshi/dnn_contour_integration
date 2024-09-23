@@ -31,5 +31,5 @@ timm==1.0.7  # Added timm with the correct version to work with the new torch an
 
 
 # Older versions of torch and torvision that worked
-torch==1.4.0
-torchvision==0.5.0
+# torch==1.4.0
+# torchvision==0.5.0
