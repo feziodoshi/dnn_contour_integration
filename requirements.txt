@@ -8,9 +8,11 @@ pytorch_pretrained_vit
 scipy==1.7.3
 seaborn==0.11.2
 sklearn==1.0.2
-torch==1.4.0
+torch==1.13.1+cu117  # Updated torch version
+torchvision==0.14.1+cu117  # Updated torchvision version
 torchinfo==1.7.1
-torchvision==0.5.0
+timm==1.0.7  # Added timm with the correct version to work with the new torch and torchvision version
+
 
 # The following are standard library modules and do not need to be installed:
 # collections
@@ -26,3 +28,8 @@ torchvision==0.5.0
 # time
 # tqdm
 # warnings
+
+
+# Older versions of torch and torvision that worked
+torch==1.4.0
+torchvision==0.5.0

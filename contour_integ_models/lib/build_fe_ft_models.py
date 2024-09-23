@@ -11,7 +11,7 @@ from pdb import set_trace
 from torch.utils import model_zoo
 import numpy as np
 import os
-
+import timm
 
 
 # Extra imports
@@ -24,12 +24,12 @@ from lib.misc_functions import (get_example_params,
                             get_positive_negative_saliency)
 
 
-from pytorch_pretrained_vit import ViT
-import bagnets.pytorchnet
+# from pytorch_pretrained_vit import ViT
+# import bagnets.pytorchnet
 
 
 
-print('updated june4')
+print('updated sept16')
 ################################################################################################################################################
 def get_base_model(base_model_name):
     base_model=None
@@ -109,16 +109,37 @@ def get_base_model(base_model_name):
         
     elif(base_model_name=='alexnet-epoch100_regim_categ'):
         base_model=alexnet_bagnet.alexnet_epoch(pretrained=True,filename=os.path.normpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../model_weights/base_model_weights/alexnet_final_weights_pytorch2-92c51abe44.pth')))
+    
+    
+    
+    elif(base_model_name=='resnet50-timm_ig1b-regim_swsl-categ'):
+        base_model = timm.create_model('resnet50.fb_swsl_ig1b_ft_in1k', pretrained=True)
         
+    
+    elif(base_model_name=='resnet50-timm_ycc100m-regim_ssl-categ'):
+        base_model = timm.create_model('resnet50.fb_ssl_yfcc100m_ft_in1k', pretrained=True)
+        
+        
+    elif(base_model_name=='vit-pytorch_regim_categ'):
+        base_model = pretrained_models.vit_b_16(pretrained=True)
+        
+    elif(base_model_name=='vit-timm_regim_categ'):
+        base_model = timm.create_model('vit_base_patch16_224.augreg_in1k', pretrained=True)
+    
     return base_model
         
-def get_readout_model(base_model,layer_name,temp_input_to_base=torch.randn(1,3,512,512)):   
+def get_readout_model(base_model_name, base_model,layer_name,temp_input_to_base=torch.randn(1,3,512,512)):   
     temp_input_to_readout=None
     
     with FeatureExtractor(base_model, layer_name) as extractor:
 
         features = extractor(temp_input_to_base)
         temp_input_to_readout=features[layer_name]
+        if('vit' in base_model_name):
+            temp_input_to_readout = temp_input_to_readout[:,0,:]
+        else:
+            pass
+        
         if(len(temp_input_to_readout.shape)!=2):
             temp_input_to_readout=temp_input_to_readout.view((temp_input_to_readout.shape[0],-1))
             
@@ -210,7 +231,7 @@ class SpliceModel(nn.Module):
         self.arrange_base_model()
         
         
-        self.readout_model=get_readout_model(self.base_model,self.layer_name,temp_input_to_base=self.temp_input_to_base).to(self.device)
+        self.readout_model=get_readout_model(self.base_model_name, self.base_model,self.layer_name,temp_input_to_base=self.temp_input_to_base).to(self.device)
         
         
     
@@ -228,7 +249,7 @@ class SpliceModel(nn.Module):
             self.temp_input_to_base=torch.randn(2,3,512,512).to(self.device)
 
         else:
-            self.temp_input_to_base=torch.randn(2,3,384,384).to(self.device)
+            self.temp_input_to_base=torch.randn(2,3,224,224).to(self.device)
             
             
     
@@ -241,6 +262,12 @@ class SpliceModel(nn.Module):
 
             features = extractor(x)
             temp_input_to_readout=features[self.layer_name].to(self.device)
+            
+            if('vit' in self.base_model_name):
+                temp_input_to_readout = temp_input_to_readout[:,0,:]
+            else:
+                pass
+            
             if(len(temp_input_to_readout.shape)!=2):
                 temp_input_to_readout=temp_input_to_readout.view((temp_input_to_readout.shape[0],-1))
 

@@ -70,8 +70,13 @@ unzip relevant_files/temp_download.zip -d relevant_files/contour_dataset/
 
 # 2. Model Weights
 wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fo/ambt5caokz4gybg3n19yt/AAwxCcW4ic9dw8qPL6YKYsE?rlkey=expo3ewzxohhcpj6s3t13110q&st=cd2v5lzd&dl=1"
-mkdir -p relevant_files/contour_dataset
-unzip relevant_files/temp_download.zip -d relevant_files/contour_dataset/
+mkdir -p relevant_files/model_weights
+unzip relevant_files/temp_download.zip -d relevant_files/model_weights/
+
+# 3. Additional Model Weights
+wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fi/rjpp4r3hnj6usk63v3vi4/additional_model_weights.tar?rlkey=viflers5nulq0f95sd0wtgeq6&st=ualxbxxg&dl=1"
+mkdir -p relevant_files/additional_model_weights
+unzip relevant_files/temp_download.zip -d relevant_files/additional_model_weights/
 
 
 # 3. Psychophysics Experiment
@@ -84,8 +89,9 @@ rm -rf relevant_files/temp_download.zip
 # Step 1: Extract the file from the relevant files folder
 tar -xvf relevant_files/<weights or dataset folder>/<filename> -C relevant_files/<weights or dataset folder>
 # Step 2: Navigate to the folder of interest and move it to the parent directory (using the mv command):
-# a) For model weights find the model weights folder and move it to the parent directory 
-# b) For datasets you can move the model-training or model-psychophysics dataset in the relevant location. However you will have to add the absolute paths in all config files provided in each subdirectory to run the notebooks
+# a) For model weights find the model_weights folder and move it to the parent directory 
+# b) For additional model weights find the additional_model_weights folder and move it to the parent directory 
+# c) For datasets you can move the model-training or model-psychophysics dataset in the relevant location. However you will have to add the absolute paths in all config files provided in each subdirectory to run the notebooks
 ```
 
 
