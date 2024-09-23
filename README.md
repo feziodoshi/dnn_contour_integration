@@ -79,7 +79,7 @@ mkdir -p relevant_files/additional_model_weights
 unzip relevant_files/temp_download.zip -d relevant_files/additional_model_weights/
 
 
-# 3. Psychophysics Experiment
+# 4. Psychophysics Experiment
 wget -O relevant_files/temp_download.zip "https://www.dropbox.com/scl/fo/6x6vovfkkbmjujock9px0/AJCvNGJje1RgPQUvCOoFPq0?rlkey=48lobiml61e2m1v87rr2kayh7&st=6nuet6r9&dl=1"
 mkdir -p relevant_files/psychophysics_experiment
 unzip relevant_files/temp_download.zip -d relevant_files/psychophysics_experiment/
